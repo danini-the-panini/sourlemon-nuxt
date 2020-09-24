@@ -6,6 +6,9 @@ export default {
     '@nuxt/content',
     '@nuxtjs/pwa',
   ],
+  css: [
+    'spectre.css'
+  ],
   target: 'static',
   generate: {
     async routes() {

@@ -13,12 +13,12 @@
 </script>
 
 <template>
-  <main>
+  <div>
     <h1>This is my blog</h1>
     <ul>
       <li v-for="article in articles" :key="article.slug">
         <a :href="articlePath(article)">{{ article.title }}</a>
       </li>
     </ul>
-  </main>
+  </div>
 </template>

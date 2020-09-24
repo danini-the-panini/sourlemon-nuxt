@@ -11,6 +11,11 @@
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/pwa": "^3.0.2",
     "nuxt": "^2.14.6",
-    "push-dir": "^0.4.1"
+    "push-dir": "^0.4.1",
+    "spectre.css": "^0.5.9"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2"
   }
 }

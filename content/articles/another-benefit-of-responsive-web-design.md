@@ -9,6 +9,11 @@ To test responsiveness of a website, you don't have to break open your phone (al
 
 However, therein lies yet another use of responsive web design: being able to shrink browser windows to take up tiny portions of your desktop screen without sacrificing readability. The following screenshot demonstrates this amazingness:
 
-![Responsive](/blog-assets/responsive.png)
+<figure class="figure">
+  <img class="img-responsive p-centered" src="/blog-assets/responsive.png">
+  <figcaption class="figure-caption text-center">
+    Example of responsive design in use on the desktop.
+  </figcaption>
+</figure>
 
 I'm glad to see so many website are moving towards responsive web design (even Ubuntu's Unity 8 is bringing the notion to the desktop/homescreen of their upcoming releases). You should do it to.
