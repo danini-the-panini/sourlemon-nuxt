@@ -17,19 +17,25 @@ Screenshots:
 <div class="container">
   <div class="columns">
     <figure class="figure column col-4">
-      <a href="/blog-assets/fdz1.png"><img class="img-responsive p-centered" src="/blog-assets/fdz1.png"></a>
+      <a href="/blog-assets/fdz1.png" target="_blank">
+        <img class="img-responsive p-centered" src="/blog-assets/fdz1.png">
+      </a>
       <figcaption class="figure-caption text-center">
         High Scores List
       </figcaption>
     </figure>
     <figure class="figure column col-4">
-      <a href="/blog-assets/fdz2.png"><img class="img-responsive p-centered" src="/blog-assets/fdz2.png"></a>
+      <a href="/blog-assets/fdz2.png" target="_blank">
+        <img class="img-responsive p-centered" src="/blog-assets/fdz2.png">
+      </a>
       <figcaption class="figure-caption text-center">
         Gameplay
       </figcaption>
     </figure>
     <figure class="figure column col-4">
-      <a href="/blog-assets/fdz3.png"><img class="img-responsive p-centered" src="/blog-assets/fdz3.png"></a>
+      <a href="/blog-assets/fdz3.png" target="_blank">
+        <img class="img-responsive p-centered" src="/blog-assets/fdz3.png">
+      </a>
       <figcaption class="figure-caption text-center">
         Game Over :(
       </figcaption>
