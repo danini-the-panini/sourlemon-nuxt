@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 export default {
   modules: ['@nuxt/content'],
   target: 'static',
@@ -5,8 +8,12 @@ export default {
     base: '/jellymann.github.io/'
   },
   generate: {
-    routes: [
-      '/blog/my-first-blog-post'
-    ]
+    async routes() {
+      let files = await fs.promises.readdir('./content/articles');
+
+      return files.map(file => {
+        return `/blog/${path.basename(file, '.md')}`
+      });
+    }
   }
 }
