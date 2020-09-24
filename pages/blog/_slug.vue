@@ -16,8 +16,7 @@
 <template>
   <article>
     <!-- <pre> {{ article }} </pre> -->
-    <p>Post created: {{ formatDate(article.createdAt) }}</p>
-    <p>Post last updated: {{ formatDate(article.updatedAt) }}</p>
+    <p>Published {{ formatDate(article.publishedAt) }}</p>
     <nuxt-content :document="article" />
   </article>
 </template>

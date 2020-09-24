@@ -1,5 +1,6 @@
 ---
 title: Adjust iTunes volume from anywhere
+publishedAt: 2014-03-28
 ---
 Today I was listening to music on my mac at work, and wondered if there was a way to adjust iTunes volume with a shortcut key. Turns out there isn't one unless iTunes is in focus, and iTunes is generally not in focus.
 

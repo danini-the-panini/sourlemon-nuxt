@@ -1,5 +1,6 @@
 ---
 title: Literate Programming
+publishedAt: 2014-03-26
 ---
 # Literate Programming
 

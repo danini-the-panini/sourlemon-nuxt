@@ -2,6 +2,9 @@
   export default {
     async asyncData({ $content, params }) {
       const articles = await $content('articles').fetch();
+      articles.sort((a, b) => {
+        return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
+      });
       return { articles };
     },
     methods: {
