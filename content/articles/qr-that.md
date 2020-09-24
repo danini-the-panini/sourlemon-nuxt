@@ -1,7 +1,7 @@
 ---
-title: QR This!
+title: QR That!
 ---
-# QR This!
+# QR That!
 
 The first webapp that I shall consider "completed", is this silly little thing that uses antiquated technology to do something for which there are already much better and more useful applications. The antiquated technology I am referring to is the ever-present QR Code. The something I'm doing with it is providing a means to easily transfer URLs from your computer to your phone. The app I created is called [QR This!](http://qr-this.herokuapp.com)
 
