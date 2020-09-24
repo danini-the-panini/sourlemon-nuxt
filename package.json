@@ -5,17 +5,17 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start",
-    "deploy": "yarn build && yarn generate && push-dir --dir=dist --branch=master --cleanup --remote=website"
+    "deploy": "yarn build && yarn generate && surge ./dist www.sourlemon.co.za"
   },
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/pwa": "^3.0.2",
     "nuxt": "^2.14.6",
-    "push-dir": "^0.4.1",
     "spectre.css": "^0.5.9"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.2"
+    "sass-loader": "^10.0.2",
+    "surge": "^0.21.6"
   }
 }
