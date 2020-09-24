@@ -2,7 +2,10 @@ import fs from 'fs';
 import path from 'path';
 
 export default {
-  modules: ['@nuxt/content'],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/pwa',
+  ],
   target: 'static',
   generate: {
     async routes() {
@@ -12,5 +15,5 @@ export default {
         return `/blog/${path.basename(file, '.md')}`
       });
     }
-  }
+  },
 }
