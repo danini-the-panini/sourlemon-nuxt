@@ -14,7 +14,7 @@ export default {
 
 <template>
   <div>
-    <header class="navbar">
+    <header class="navbar bg-gray">
       <section class="navbar-section">
         <a href="/" class="btn btn-link">Home</a>
         <a href="/blog" class="btn btn-link">Blog</a>
