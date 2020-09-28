@@ -1,4 +1,6 @@
 <script>
+  import formatDate from '../../functions/formatDate';
+
   export default {
     async asyncData({ $content, params }) {
       const articles = await $content('articles').fetch();
@@ -10,18 +12,29 @@
     methods: {
       articlePath(article) {
         return `/blog/${article.slug}/`;
-      }
+      },
+      formatDate
     }
   }
 </script>
 
 <template>
   <div>
-    <h1>This is my blog</h1>
-    <ul>
-      <li v-for="article in articles" :key="article.slug">
-        <a :href="articlePath(article)">{{ article.title }}</a>
-      </li>
-    </ul>
+    <h1>Blog posts</h1>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Published</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="article in articles" :key="article.slug">
+          <td><a :href="articlePath(article)">{{ article.title }}</a></td>
+          <td>{{ formatDate(article.publishedAt) }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
