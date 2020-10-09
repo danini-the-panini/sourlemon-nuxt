@@ -1,4 +1,6 @@
 <script>
+import '../assets/icons.css';
+
 export default {
   head() {
     return {

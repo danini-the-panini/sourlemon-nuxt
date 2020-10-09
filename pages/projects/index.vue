@@ -1,5 +1,4 @@
 <script>
-  import '../../assets/icons.css';
   import GithubLogo from '../../static/github.svg';
   import articlePath from '../../functions/articlePath';
 
