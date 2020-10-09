@@ -1,6 +1,7 @@
 ---
 title: Four ways to stub the file system
 publishedAt: 2015-05-01
+tags:  ["ruby", "tdd"]
 ---
 # Four ways to stub the file system
 

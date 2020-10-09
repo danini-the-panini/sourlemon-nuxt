@@ -1,6 +1,7 @@
 ---
 title: Rebuilding my blog with Rails 5
-publishedAt: 2016-03-30
+publishedAt: 2016-03-30s
+tags: ["ruby", "rails", "meta"]
 ---
 # Rebuilding my blog with Rails 5
 

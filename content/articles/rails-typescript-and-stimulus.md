@@ -1,6 +1,7 @@
 ---
 title: Rails, Typescript, and Stimulus
 publishedAt: 2020-02-20
+tags: ["rails", "typescript", "stimulus", "tutorial"]
 ---
 # Rails, Typescript, and Stimulus
 

@@ -1,6 +1,7 @@
 ---
 title: QR That!
 publishedAt: 2014-02-28
+tags: ["ruby", "sinatra", "heroku"]
 ---
 # QR That!
 

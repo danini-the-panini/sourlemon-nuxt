@@ -1,7 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-
 export default {
+  components: true,
   modules: [
     '@nuxt/content',
     '@nuxtjs/pwa',
@@ -12,11 +10,21 @@ export default {
   target: 'static',
   generate: {
     async routes() {
-      let files = await fs.promises.readdir('./content/articles');
+      const { $content } = require('@nuxt/content');
 
-      return files.map(file => {
-        return `/blog/${path.basename(file, '.md')}`
-      });
+      const articles = await $content('articles').only(['slug', 'tags']).fetch();
+
+      let postRoutes = articles.map(({ slug }) => (
+        `/blog/${slug}`
+      ));
+
+      let tags = articles.flatMap(({ tags }) => tags);
+
+      let tagRoutes = tags.map(tag => (
+        `/blog/tags/${tag}`
+      ));
+
+      return [...postRoutes, ...tagRoutes];
     }
   },
 }

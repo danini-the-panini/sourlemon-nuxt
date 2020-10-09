@@ -1,6 +1,7 @@
 ---
 title: When Angulars Attack!!!
 publishedAt: 2016-05-26
+tags: ["angularjs", "javascript"]
 ---
 # When Angulars Attack!!!
 

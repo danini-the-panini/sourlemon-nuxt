@@ -1,6 +1,7 @@
 ---
 title: Random Sampling Performance in Ruby
 publishedAt: 2015-03-01
+tags: ["ruby", "benchmark"]
 ---
 # Random Sampling Performance in Ruby
 

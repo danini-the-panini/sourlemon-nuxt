@@ -1,6 +1,7 @@
 ---
 title: I Made and Played a Game at a LAN
 publishedAt: 2016-04-20
+tags: ["gamedev", "websockets", "node", "javascript"]
 ---
 # I Made and Played a Game at a LAN
 

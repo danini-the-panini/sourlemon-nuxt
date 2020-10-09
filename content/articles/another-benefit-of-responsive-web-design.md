@@ -1,6 +1,7 @@
 ---
 title: Another benefit of Responsive Web Design
 publishedAt: 2014-03-25
+tags: ["design"]
 ---
 # Another benefit of Responsive Web Design
 

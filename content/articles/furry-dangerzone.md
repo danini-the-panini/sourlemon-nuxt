@@ -1,6 +1,7 @@
 ---
 title: Furry Dangerzone
 publishedAt: 2014-04-22
+tags: ["gamedev", "ruby"]
 ---
 # Furry Dangerzone
 
