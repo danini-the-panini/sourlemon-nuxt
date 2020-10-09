@@ -1,14 +1,13 @@
 <script>
   import formatDate from '../functions/formatDate';
+  import articlePath from '../functions/articlePath';
 
   export default {
     props: {
       articles: Array
     },
     methods: {
-      articlePath(article) {
-        return `/blog/${article.slug}/`;
-      },
+      articlePath,
       formatDate
     }
   }
