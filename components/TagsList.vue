@@ -14,9 +14,9 @@
 <template>
   <ul>
     <li v-for="tag in tags" :key="tag">
-      <a class="chip bg-primary text-secondary" :href="tagPath(tag)">
+      <n-link class="chip bg-primary text-secondary" :to="tagPath(tag)">
         {{ tag }}
-      </a>
+      </n-link>
     </li>
   </ul>
 </template>

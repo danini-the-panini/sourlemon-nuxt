@@ -10,7 +10,7 @@
     </div>
     <p>Hi, I'm Dan. Nice to meet you.</p>
 
-    <p>I love my job. I'm a full-time full-stack web developer at <a href="http://www.platform45.com/">Platform45</a>.</p>
+    <p>I love my job. I'm a full-time full-stack web developer at <a href="http://www.platform45.com/" target="_blank">Platform45</a>.</p>
 
     <p>This website is a collection of technology-related things I have decided to share with the world. Enjoy :)</p>
   </div>

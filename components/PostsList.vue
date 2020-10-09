@@ -24,7 +24,7 @@
     </thead>
     <tbody>
       <tr v-for="article in articles" :key="article.slug">
-        <td><a :href="articlePath(article)">{{ article.title }}</a></td>
+        <td><n-link :to="articlePath(article)">{{ article.title }}</n-link></td>
         <td><tags-list :tags="article.tags" /></td>
         <td>{{ formatDate(article.publishedAt) }}</td>
       </tr>
