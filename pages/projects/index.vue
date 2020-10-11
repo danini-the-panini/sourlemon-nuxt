@@ -39,17 +39,17 @@
             </div>
           </div>
           <div class="card-image">
-            <img :src="projectImage(project.slug)" class="img-responsive">
+            <img :src="projectImage(project.slug)" class="img-responsive" :alt="`Screenshot of ${project.name}`" width="412" height="226">
           </div>
           <div class="card-body">
             <nuxt-content :document="project" />
           </div>
           <div class="card-footer">
-            <a v-if="project.repo" class="btn" :href="project.repo" target="_blank">
+            <a v-if="project.repo" class="btn" :href="project.repo" rel="noreferrer noopener" target="_blank">
               <GithubLogo />
               Source
             </a>
-            <a v-if="project.website" class="btn" :href="project.website" target="_blank">
+            <a v-if="project.website" class="btn" :href="project.website" rel="noreferrer noopener" target="_blank">
               <i class="icon icon-link"></i>
               Website
             </a>

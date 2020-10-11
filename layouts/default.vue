@@ -25,8 +25,8 @@ export default {
         <n-link to="/" class="navbar-brand mr-2">Sour {&gt;.&lt;} Lemon</n-link>
       </section>
       <section class="navbar-section">
-        <a href="https://www.twitter.com/jellym4nn" target="_blank" class="btn btn-link">Twitter</a>
-        <a href="https://www.github.com/jellymann" target="_blank" class="btn btn-link">Github</a>
+        <a href="https://www.twitter.com/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link">Twitter</a>
+        <a href="https://www.github.com/jellymann" target="_blank" rel="noreferrer noopener" class="btn btn-link">Github</a>
       </section>
     </header>
     <main class="container grid-md">
