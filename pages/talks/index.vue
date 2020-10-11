@@ -1,6 +1,7 @@
 <script>
   import generateTitle from '../../functions/generateTitle';
   import formatDate from '../../functions/formatDate';
+  import talkPath from '../../functions/talkPath';
 
   export default {
     head() {
@@ -16,9 +17,7 @@
       return { talks };
     },
     methods: {
-      talkPath(talk) {
-        return `/talks/${talk.slug}/`;
-      },
+      talkPath,
       talkImage(slug) {
         return require(`~/assets/talk-images/${slug}.png`);
       },

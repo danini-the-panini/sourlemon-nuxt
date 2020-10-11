@@ -1,6 +1,7 @@
 <script>
   import GithubLogo from '../../static/github.svg';
   import articlePath from '../../functions/articlePath';
+  import talkPath from '../../functions/talkPath';
   import generateTitle from '../../functions/generateTitle';
 
   export default {
@@ -18,7 +19,8 @@
       projectImage(slug) {
         return require(`~/assets/project-images/${slug}.png`);
       },
-      articlePath
+      articlePath,
+      talkPath
     }
   }
 </script>
@@ -62,6 +64,10 @@
             <n-link v-if="project.article" class="btn" :to="articlePath({ slug: project.article })">
               <i class="icon icon-link"></i>
               Article
+            </n-link>
+            <n-link v-if="project.talk" class="btn" :to="talkPath({ slug: project.talk })">
+              <i class="icon icon-person"></i>
+              Talk
             </n-link>
           </div>
         </div>
