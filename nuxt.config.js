@@ -26,7 +26,13 @@ export default {
         `/blog/tags/${tag}`
       ));
 
-      return [...postRoutes, ...tagRoutes];
+      const talks = await $content('talks').only(['slug']).fetch();
+
+      let talkRoutes = talks.map(({ slug }) => (
+        `/talks/${slug}`
+      ));
+
+      return [...postRoutes, ...talkRoutes, ...tagRoutes];
     }
   },
   build: {

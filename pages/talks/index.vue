@@ -1,56 +1,46 @@
 <script>
-  import GithubLogo from '../../static/github.svg';
-  import articlePath from '../../functions/articlePath';
   import generateTitle from '../../functions/generateTitle';
 
   export default {
-    components: { GithubLogo },
     head() {
       return {
-        title: generateTitle("Projects")
+        title: generateTitle("Talks")
       }
     },
     async asyncData({ $content, params }) {
-      const projects = await $content('projects').fetch();
-      return { projects };
+      const talks = await $content('talks').fetch();
+      return { talks };
     },
     methods: {
-      projectImage(slug) {
-        return require(`~/assets/project-images/${slug}.png`);
-      },
-      articlePath
+      talkPath(talk) {
+        return `/talks/${talk.slug}/`;
+      }
     }
   }
 </script>
 
 <template>
   <div>
-    <h1>Projects</h1>
+    <h1>Talks</h1>
     <div class="columns">
-      <div
-        v-for="project in projects" :key="project.name"
+      <n-link
+        :to="talkPath(talk)"
+        v-for="talk in talks" :key="talk.title"
         class="column col-6 col-xs-12"
       >
         <div class="card">
           <div class="card-header">
             <div class="card-title">
-              <h2 class="h5">{{ project.name }}</h2>
-              
-              <div class="project-tools">
-                <span v-for="tool in project.tools" :key="tool" class="chip bg-primary">{{tool}}</span>
-              </div>
-            </div>
-            <div class="card-subtitle text-gray">
-              {{project.tags.join(', ')}}
+              <h2 class="h5">{{ talk.title }}</h2>
             </div>
           </div>
-          <div class="card-image">
+          <!-- <div class="card-image">
             <img :src="projectImage(project.slug)" class="img-responsive" :alt="`Screenshot of ${project.name}`" width="412" height="226">
-          </div>
+          </div> -->
           <div class="card-body">
-            <nuxt-content :document="project" />
+            <nuxt-content :document="talk" />
           </div>
-          <div class="card-footer">
+          <!-- <div class="card-footer">
             <a v-if="project.repo" class="btn" :href="project.repo" rel="noreferrer noopener" target="_blank">
               <GithubLogo />
               Source
@@ -63,18 +53,14 @@
               <i class="icon icon-link"></i>
               Article
             </n-link>
-          </div>
+          </div> -->
         </div>
-      </div>
+      </n-link>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.img-responsive {
-  width: 100%;
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
