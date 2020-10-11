@@ -41,8 +41,7 @@
             <div class="card-title">
               <h2 class="h5">{{ talk.title }}</h2>
             </div>
-            <div class="card-subtitle">
-              {{ talk.subtitle }}
+            <div class="card-subtitle" v-html="talk.subtitle">
             </div>
           </div>
           <div class="card-image">

@@ -33,7 +33,7 @@
           {{ formatDate(talk.date) }}
         </div>
       </div>
-      <p>{{ talk.subtitle }}</p>
+      <p v-html="talk.subtitle"></p>
       <nuxt-content :document="talk" />
       <section v-if="talk.video">
         <h2>Video</h2>
