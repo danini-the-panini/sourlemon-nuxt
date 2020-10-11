@@ -19,6 +19,38 @@ export default {
         }
       ],
     }
+  },
+  computed: {
+    route() { return this.$route }
+  },
+  watch: {
+    route() {
+      this.lemonLeave();
+    }
+  },
+  mounted() {
+    this.lemonLeave()
+  },
+  methods: {
+    lemonTouch() {
+      this.$refs.lemon.textContent = '{-.-}';
+    },
+    lemonLeave() {
+      let r = Math.random()
+      if (r < 0.05) {
+        this.$refs.lemon.textContent = '{o.O}';
+      } else if (r < 0.1) {
+        this.$refs.lemon.textContent = '{O.o}';
+      } else if (r < 0.15) {
+        this.$refs.lemon.textContent = '{O.O}';
+      } else if (r < 0.20) {
+        this.$refs.lemon.textContent = '{T.T}';
+      } else if (r < 0.25) {
+        this.$refs.lemon.textContent = '{^.^}';
+      } else {
+        this.$refs.lemon.textContent = '{>.<}';
+      }
+    }
   }
 }
 </script>
@@ -32,7 +64,11 @@ export default {
         <n-link to="/talks" class="btn btn-link"><i class="icon icon-person"></i><span class="hide-sm">Talks</span></n-link>
       </section>
       <section class="navbar-center">
-        <n-link to="/" class="navbar-brand mr-2"><span class="hide-sm">Sour </span>{&gt;.&lt;}<span class="hide-sm"> Lemon</span></n-link>
+        <n-link to="/" class="navbar-brand mr-2">
+          <span class="hide-sm">Sour </span>
+          <span class="lemon" @mouseenter="lemonTouch" @mouseleave="lemonLeave" ref="lemon">{&gt;.&lt;}</span>
+          <span class="hide-sm"> Lemon</span>
+        </n-link>
       </section>
       <section class="navbar-section">
         <a href="https://www.twitter.com/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitterLogo /><span class="hide-sm">Twitter</span></a>
@@ -67,5 +103,15 @@ main {
       margin-right: 0.25rem;
     }
   }
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-style: italic;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+}
+
+.lemon {
+  font-style: normal;
 }
 </style>
