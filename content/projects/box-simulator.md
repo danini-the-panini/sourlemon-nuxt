@@ -1,7 +1,6 @@
 ---
 name: Box Simulator
-tags: ["game", "personal", "web"]
-languages: ["javascript"]
+tags: ["game", "web"]
 tools: ["node.js", "express", "three.js"]
 repo: 'https://github.com/jellymann/websocket-game'
 article: i-made-and-played-a-game-at-a-lan

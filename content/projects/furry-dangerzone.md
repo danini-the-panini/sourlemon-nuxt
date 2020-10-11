@@ -1,8 +1,7 @@
 ---
 name: Furry Dangerzone
-tags: ["game", "personal"]
-languages: ["ruby"]
-tools: ["gosu"]
+tags: ["game"]
+tools: ["ruby", "gosu"]
 repo: 'https://github.com/jellymann/furry-dangerzone'
 article: furry-dangerzone
 ---

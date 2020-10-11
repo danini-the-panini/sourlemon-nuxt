@@ -9,11 +9,6 @@
       return { projects };
     },
     methods: {
-      toSentence(words) {
-        if (!words || !words.length) return '';
-        if (words.length === 1) return words[0];
-        return `${words.slice(0, words.length-1).join(', ')} and ${words[words.length-1]}`;
-      },
       projectImage(slug) {
         return require(`~/assets/project-images/${slug}.png`);
       },
@@ -40,7 +35,7 @@
               </div>
             </div>
             <div class="card-subtitle text-gray">
-              {{toSentence(project.tags)}}
+              {{project.tags.join(', ')}}
             </div>
           </div>
           <div class="card-image">
