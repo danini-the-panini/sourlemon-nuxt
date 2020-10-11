@@ -1,5 +1,6 @@
 <script>
   import generateTitle from '../../functions/generateTitle';
+  import formatDate from '../../functions/formatDate';
 
   export default {
     head() {
@@ -9,12 +10,19 @@
     },
     async asyncData({ $content, params }) {
       const talks = await $content('talks').fetch();
+      talks.sort((a, b) => {
+        return Date.parse(b.date) - Date.parse(a.date);
+      });
       return { talks };
     },
     methods: {
       talkPath(talk) {
         return `/talks/${talk.slug}/`;
-      }
+      },
+      talkImage(slug) {
+        return require(`~/assets/talk-images/${slug}.png`);
+      },
+      formatDate
     }
   }
 </script>
@@ -28,32 +36,26 @@
         v-for="talk in talks" :key="talk.title"
         class="column col-6 col-xs-12"
       >
-        <div class="card">
+        <div class="card text-dark">
           <div class="card-header">
             <div class="card-title">
               <h2 class="h5">{{ talk.title }}</h2>
             </div>
+            <div class="card-subtitle">
+              {{ talk.subtitle }}
+            </div>
           </div>
-          <!-- <div class="card-image">
-            <img :src="projectImage(project.slug)" class="img-responsive" :alt="`Screenshot of ${project.name}`" width="412" height="226">
-          </div> -->
+          <div class="card-image">
+            <img :src="talkImage(talk.slug)" class="img-responsive" :alt="`Sample slide ${talk.title}`" width="900" height="500">
+          </div>
           <div class="card-body">
             <nuxt-content :document="talk" />
           </div>
-          <!-- <div class="card-footer">
-            <a v-if="project.repo" class="btn" :href="project.repo" rel="noreferrer noopener" target="_blank">
-              <GithubLogo />
-              Source
-            </a>
-            <a v-if="project.website" class="btn" :href="project.website" rel="noreferrer noopener" target="_blank">
-              <i class="icon icon-link"></i>
-              Website
-            </a>
-            <n-link v-if="project.article" class="btn" :to="articlePath({ slug: project.article })">
-              <i class="icon icon-link"></i>
-              Article
-            </n-link>
-          </div> -->
+          <div class="card-footer">
+            <div class="card-subtitle">
+              {{ formatDate(talk.date) }}
+            </div>
+          </div>
         </div>
       </n-link>
     </div>

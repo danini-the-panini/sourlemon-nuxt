@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     onResize() {
-      console.log(this.$refs.iframe.clientWidth)
       this.$refs.iframe.style.height = `${this.$refs.iframe.clientWidth/1.7777777777777}px`;
     }
   }

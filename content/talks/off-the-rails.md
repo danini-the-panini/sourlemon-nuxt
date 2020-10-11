@@ -1,4 +1,7 @@
 ---
 title: Off the Rails
+subtitle: My journey to becoming a ~hipester~ Node.js developer
 deck: a17dc6029a4a4be4985cee6ad7178240
+deckRatio: 1.33333333333333
+date: 03-17-2017
 ---
