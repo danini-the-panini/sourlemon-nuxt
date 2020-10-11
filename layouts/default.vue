@@ -1,14 +1,20 @@
 <script>
 import '../assets/icons.css';
+import generateTitle from '../functions/generateTitle';
 
 export default {
   head() {
     return {
-      title: "Sour {>.<} Lemon",
-      meta: [{
-        name: "viewport",
-        content: "width=device-width, initial-scale=1"
-      }],
+      title: generateTitle(),
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: "My personal website/blog/thing"
+        }
+      ],
     }
   }
 }

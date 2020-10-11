@@ -1,10 +1,19 @@
 <script>
   import formatDate from '../../functions/formatDate';
+  import generateTitle from '../../functions/generateTitle';
 
   export default {
+    head({ article }) {
+      return {
+        title: generateTitle(article.title)
+      }
+    },
     async asyncData({ $content, params }) {
       const article = await $content('articles', params.slug).fetch();
-      return { article }
+      return {
+        article,
+        title: generateTitle(article.title)
+      }
     },
     methods: {
       formatDate
@@ -14,7 +23,6 @@
 
 <template>
   <article>
-    <!-- <pre> {{ article }} </pre> -->
     <div class="info">
       <tags-list :tags="article.tags" />
       <p class="published">Published {{ formatDate(article.publishedAt) }}</p>

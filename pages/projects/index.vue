@@ -1,9 +1,15 @@
 <script>
   import GithubLogo from '../../static/github.svg';
   import articlePath from '../../functions/articlePath';
+import generateTitle from '../../functions/generateTitle';
 
   export default {
     components: { GithubLogo },
+    head() {
+      return {
+        title: generateTitle("Projects")
+      }
+    },
     async asyncData({ $content, params }) {
       const projects = await $content('projects').fetch();
       return { projects };

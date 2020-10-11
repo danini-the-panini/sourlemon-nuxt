@@ -1,5 +1,11 @@
 <script>
+import generateTitle from '../../../functions/generateTitle';
   export default {
+    head({ tag }) {
+      return {
+        title: generateTitle(`Posts tagged ${tag}`)
+      }
+    },
     async asyncData({ $content, params }) {
       let articles = await $content('articles').fetch();
       articles = articles.filter(article => {

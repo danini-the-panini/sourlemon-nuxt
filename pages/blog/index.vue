@@ -1,5 +1,18 @@
 <script>
+import generateTitle from '../../functions/generateTitle';
   export default {
+    head() {
+      return {
+        title: generateTitle("Blog posts"),
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: "My blog post listingss"
+          }
+        ],
+      }
+    },
     async asyncData({ $content, params }) {
       const articles = await $content('articles').fetch();
       articles.sort((a, b) => {
