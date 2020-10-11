@@ -1,5 +1,7 @@
 export default {
   components: true,
+  resourceHints: true,
+  http2: { push: true, pushAssets: true },
   modules: [
     '@nuxt/content',
     '@nuxtjs/pwa',
