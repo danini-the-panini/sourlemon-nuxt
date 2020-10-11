@@ -14,10 +14,9 @@ import generateTitle from '../../functions/generateTitle';
       }
     },
     async asyncData({ $content, params }) {
-      const articles = await $content('articles').fetch();
-      articles.sort((a, b) => {
-        return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
-      });
+      const articles = await $content('articles')
+        .sortBy('publishedAt', 'desc')
+        .fetch();
       return { articles };
     }
   }

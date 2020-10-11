@@ -10,10 +10,9 @@
       }
     },
     async asyncData({ $content, params }) {
-      const talks = await $content('talks').fetch();
-      talks.sort((a, b) => {
-        return Date.parse(b.date) - Date.parse(a.date);
-      });
+      const talks = await $content('talks')
+        .sortBy('date', 'desc')
+        .fetch();
       return { talks };
     },
     methods: {

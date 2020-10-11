@@ -7,13 +7,10 @@ import generateTitle from '../../../functions/generateTitle';
       }
     },
     async asyncData({ $content, params }) {
-      let articles = await $content('articles').fetch();
-      articles = articles.filter(article => {
-        return article.tags.includes(params.tag);
-      });
-      articles.sort((a, b) => {
-        return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
-      });
+      let articles = await $content('articles')
+        .where({ tags: { $contains: params.tag } })
+        .sortBy('publishedAt', 'desc')
+        .fetch();
       return { articles, tag: params.tag };
     }
   }
