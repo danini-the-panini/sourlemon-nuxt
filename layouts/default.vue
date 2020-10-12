@@ -65,9 +65,9 @@ export default {
       </section>
       <section class="navbar-center">
         <n-link to="/" class="navbar-brand mr-2">
-          <span class="hide-sm">Sour </span>
+          <span class="hide-md">Sour </span>
           <span class="lemon" @mouseenter="lemonTouch" @mouseleave="lemonLeave" ref="lemon">{&gt;.&lt;}</span>
-          <span class="hide-sm"> Lemon</span>
+          <span class="hide-md"> Lemon</span>
         </n-link>
       </section>
       <section class="navbar-section">
