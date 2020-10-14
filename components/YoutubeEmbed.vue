@@ -22,6 +22,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.onResize, { passive: true });
+    this.onResize();
   },
   destroyed() {
     window.removeEventListener('resize', this.onResize);
