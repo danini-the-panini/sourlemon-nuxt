@@ -23,9 +23,9 @@
 
 <template>
   <article>
-    <div class="info">
-      <tags-list :tags="article.tags" />
-      <p class="published">Published {{ formatDate(article.publishedAt) }}</p>
+    <div class="info columns">
+      <tags-list :tags="article.tags" class="column col-6 col-sm-12" />
+      <p class="published column col-6 col-sm-12">Published {{ formatDate(article.publishedAt) }}</p>
     </div>
     <div class="article">
       <nuxt-content :document="article" />
@@ -44,6 +44,7 @@
   margin: 0;
   font-style: italic;
   margin-left: auto;
+  text-align: right;
 }
 
 .article {
