@@ -48,7 +48,6 @@
 </template>
 
 <style lang="scss" scoped>
-
 .talk {
   &__header {
     display: flex;
