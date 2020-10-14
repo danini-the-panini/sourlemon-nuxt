@@ -18,7 +18,7 @@ bin/rails webpacker:install:typescript
 If all goes well, you should see this wonderful message:
 
 ```
-Webpacker now supports typescript �
+Webpacker now supports typescript 🎉
 ```
 
 _**NOTE:** You can also do this in `rails new` with the `--webpacker=typescript` flag, even though this little detail is not documented when running `rails new --help`)_
