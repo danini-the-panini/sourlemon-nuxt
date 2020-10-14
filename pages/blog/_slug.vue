@@ -67,5 +67,45 @@
       opacity: 1;
     }
   }
+
+  ::v-deep code {
+    background: #f7f8f9;
+    color: #3b4351;
+    font-family: SFMono-Regular,Cascadia Code,Consolas,Liberation Mono,Menlo,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+  }
+
+  ::v-deep pre code {
+    background: transparent;
+    font-size: 100%;
+  }
+  
+  ::v-deep pre {
+    $scrollbar-color: #c1c1c1;
+
+    margin-bottom: 1rem;
+    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.14), inset 0 1px 5px 0 rgba(0,0,0,0.12), inset 0 3px 1px -2px rgba(0,0,0,0.2);
+    scrollbar-color: $scrollbar-color;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.5rem;
+      background-color: $scrollbar-color;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 0.5rem;
+      background-color: transparent;
+    }
+  }
 }
 </style>

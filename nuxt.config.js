@@ -10,6 +10,13 @@ export default {
     'spectre.css'
   ],
   target: 'static',
+  content: {
+    markdown: {
+      prism: {
+        theme: '~assets/prism-theme.css'
+      }
+    }
+  },
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content');
