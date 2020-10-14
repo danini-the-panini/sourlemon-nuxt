@@ -33,7 +33,7 @@
     <div class="columns">
       <div
         v-for="project in projects" :key="project.name"
-        class="column col-6 col-xs-12"
+        class="column col-6 col-md-12"
       >
         <div class="card">
           <div class="card-header">
@@ -105,7 +105,12 @@
 }
 
 .column {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+
+  @media screen and (max-width: 52.5rem) {
+    margin: 0 auto 1rem;
+    max-width: 25.75rem;
+  }
 }
 
 .card-title {

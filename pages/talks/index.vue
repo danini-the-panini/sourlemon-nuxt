@@ -32,7 +32,7 @@
       <n-link
         :to="talkPath(talk)"
         v-for="talk in talks" :key="talk.title"
-        class="column col-6 col-xs-12"
+        class="column col-6 col-md-12"
       >
         <div class="card text-dark">
           <div class="card-header">
@@ -82,7 +82,12 @@
 }
 
 .column {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+
+  @media screen and (max-width: 52.5rem) {
+    margin: 0 auto 1rem;
+    max-width: 25.75rem;
+  }
 }
 
 .card-title {
