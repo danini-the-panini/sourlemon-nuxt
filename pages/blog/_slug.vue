@@ -77,6 +77,7 @@
   ::v-deep pre code {
     background: transparent;
     font-size: 100%;
+    padding: 0;
   }
   
   ::v-deep pre {
