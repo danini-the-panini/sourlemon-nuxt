@@ -3,9 +3,14 @@ import '../assets/icons.css';
 import generateTitle from '../functions/generateTitle';
 import GithubLogo from '../static/github.svg';
 import TwitterLogo from '../static/twitter.svg';
+import TwitchLogo from '../static/twitch.svg';
 
 export default {
-  components: { TwitterLogo, GithubLogo },
+  components: {
+    TwitterLogo,
+    GithubLogo,
+    TwitchLogo
+  },
   head() {
     return {
       title: generateTitle(),
@@ -71,8 +76,9 @@ export default {
         </n-link>
       </section>
       <section class="navbar-section">
-        <a href="https://www.twitter.com/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitterLogo /><span class="hide-sm">Twitter</span></a>
-        <a href="https://www.github.com/jellymann" target="_blank" rel="noreferrer noopener" class="btn btn-link"><GithubLogo /><span class="hide-sm">Github</span></a>
+        <a href="https://twitch.tv/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitchLogo /><span class="hide-sm">Twitch</span></a>
+        <a href="https://twitter.com/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitterLogo /><span class="hide-sm">Twitter</span></a>
+        <a href="https://github.com/jellymann" target="_blank" rel="noreferrer noopener" class="btn btn-link"><GithubLogo /><span class="hide-sm">Github</span></a>
       </section>
     </header>
     <main class="container grid-md">
@@ -95,12 +101,15 @@ main {
       height: 100%;
       width: auto;
       display: block;
-      margin-right: 0.25rem;
       fill: currentColor;
     }
 
-    i {
-      margin-right: 0.25rem;
+    i, svg {
+      margin-right: 0;
+
+      @media screen and (min-width: 37.5rem) {
+        margin-right: 0.25rem;
+      }
     }
   }
 }
