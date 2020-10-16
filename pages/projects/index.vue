@@ -3,9 +3,10 @@
   import articlePath from '../../functions/articlePath';
   import talkPath from '../../functions/talkPath';
   import generateTitle from '../../functions/generateTitle';
+  import FloopyButton from '../../components/FloopyButton.vue';
 
   export default {
-    components: { GithubLogo },
+    components: { GithubLogo, FloopyButton },
     head() {
       return {
         title: generateTitle("Projects")
@@ -35,50 +36,60 @@
         v-for="project in projects" :key="project.name"
         class="column col-6 col-md-12"
       >
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">
-              <h2 class="h5">{{ project.name }}</h2>
-              
-              <div class="project-tools">
-                <span v-for="tool in project.tools" :key="tool" class="chip bg-primary">{{tool}}</span>
+        <floopy-button class="floopy" notClickable="true">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <h2 class="h5">{{ project.name }}</h2>
+
+                <div class="project-tools">
+                  <span v-for="tool in project.tools" :key="tool" class="chip bg-primary">{{tool}}</span>
+                </div>
+              </div>
+              <div class="card-subtitle text-gray">
+                {{project.tags.join(', ')}}
               </div>
             </div>
-            <div class="card-subtitle text-gray">
-              {{project.tags.join(', ')}}
+            <div class="card-image">
+              <img :src="projectImage(project.slug)" class="img-responsive" :alt="`Screenshot of ${project.name}`" width="412" height="226">
+            </div>
+            <div class="card-body">
+              <nuxt-content :document="project" />
+            </div>
+            <div class="card-footer">
+              <a v-if="project.repo" class="btn" :href="project.repo" rel="noreferrer noopener" target="_blank">
+                <GithubLogo />
+                Source
+              </a>
+              <a v-if="project.website" class="btn" :href="project.website" rel="noreferrer noopener" target="_blank">
+                <i class="icon icon-link"></i>
+                Website
+              </a>
+              <n-link v-if="project.article" class="btn" :to="articlePath({ slug: project.article })">
+                <i class="icon icon-link"></i>
+                Article
+              </n-link>
+              <n-link v-if="project.talk" class="btn" :to="talkPath({ slug: project.talk })">
+                <i class="icon icon-person"></i>
+                Talk
+              </n-link>
             </div>
           </div>
-          <div class="card-image">
-            <img :src="projectImage(project.slug)" class="img-responsive" :alt="`Screenshot of ${project.name}`" width="412" height="226">
-          </div>
-          <div class="card-body">
-            <nuxt-content :document="project" />
-          </div>
-          <div class="card-footer">
-            <a v-if="project.repo" class="btn" :href="project.repo" rel="noreferrer noopener" target="_blank">
-              <GithubLogo />
-              Source
-            </a>
-            <a v-if="project.website" class="btn" :href="project.website" rel="noreferrer noopener" target="_blank">
-              <i class="icon icon-link"></i>
-              Website
-            </a>
-            <n-link v-if="project.article" class="btn" :to="articlePath({ slug: project.article })">
-              <i class="icon icon-link"></i>
-              Article
-            </n-link>
-            <n-link v-if="project.talk" class="btn" :to="talkPath({ slug: project.talk })">
-              <i class="icon icon-person"></i>
-              Talk
-            </n-link>
-          </div>
-        </div>
+        </floopy-button>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.floopy {
+  --angle: 5;
+  --click-angle: 15;
+  --glow-color: rgba(255, 255, 255, 0.5);
+  --glow-background: rgba(255, 255, 255, 0.0);
+  height: 100%;
+}
+
 .img-responsive {
   width: 100%;
 }

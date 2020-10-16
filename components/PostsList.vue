@@ -11,23 +11,24 @@
     },
     methods: {
       articlePath,
-      formatDate
+      formatDate,
+      goToArticle(article) {
+        this.$router.push(this.articlePath(article));
+      }
     }
   }
 </script>
 
 <template>
   <div class="columns">
-    <n-link
-      :to="articlePath(article)"
-      v-for="article in articles" :key="article.slug"
-      class="article-link column col-12"
-    >
-      <floopy-button class="floopy">
+    <div v-for="article in articles" :key="article.slug" class="column col-12">
+      <floopy-button class="floopy" @click="goToArticle(article)">
         <div class="card text-dark">
           <div class="card-header">
             <div class="card-title">
-              <h2 class="h5">{{ article.title }}</h2>
+              <n-link :to="articlePath(article)">
+                <h2 class="h5">{{ article.title }}</h2>
+              </n-link>
               
               <tags-list :tags="article.tags" class="tags-list" />
             </div>
@@ -37,22 +38,16 @@
           </div>
         </div>
       </floopy-button>
-    </n-link>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.article-link {
-  &, &:active, &:focus {
-    box-shadow: none!important;
-  }
-}
-
 .floopy {
   --angle: 5;
   --click-angle: 15;
-  --glow-color: rgba(0, 110, 255, 0.2);
-  --glow-background: rgba(255, 255, 255, 0.1);
+  --glow-color: rgba(255, 255, 255, 0.5);
+  --glow-background: rgba(255, 255, 255, 0.0);
 }
 
 .card {
@@ -61,7 +56,7 @@
   transition: box-shadow 150ms ease-in-out;
 
   &:hover {
-    box-shadow: 0 0.25rem 2rem rgba(48,55,66,.3);
+    box-shadow: 0 0.2rem 0.5rem rgba(48,55,66,.3);
 
     .h5, .card-subtitle {
       text-decoration: underline;

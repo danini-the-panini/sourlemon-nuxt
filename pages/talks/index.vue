@@ -2,8 +2,10 @@
   import generateTitle from '../../functions/generateTitle';
   import formatDate from '../../functions/formatDate';
   import talkPath from '../../functions/talkPath';
+  import FloopyButton from '../../components/FloopyButton.vue';
 
   export default {
+    components: { FloopyButton },
     head() {
       return {
         title: generateTitle("Talks")
@@ -32,34 +34,50 @@
       <n-link
         :to="talkPath(talk)"
         v-for="talk in talks" :key="talk.title"
-        class="column col-6 col-md-12"
+        class="column col-6 col-md-12 talk-link"
       >
-        <div class="card text-dark">
-          <div class="card-header">
-            <div class="card-title">
-              <h2 class="h5">{{ talk.title }}</h2>
+        <floopy-button class="floopy">
+          <div class="card text-dark">
+            <div class="card-header">
+              <div class="card-title">
+                <h2 class="h5">{{ talk.title }}</h2>
+              </div>
+              <div class="card-subtitle" v-html="talk.subtitle">
+              </div>
             </div>
-            <div class="card-subtitle" v-html="talk.subtitle">
+            <div class="card-image">
+              <img :src="talkImage(talk.slug)" class="img-responsive" :alt="`Sample slide ${talk.title}`" width="900" height="500">
+            </div>
+            <div class="card-body">
+              <nuxt-content :document="talk" />
+            </div>
+            <div class="card-footer">
+              <div class="card-subtitle">
+                {{ formatDate(talk.date) }}
+              </div>
             </div>
           </div>
-          <div class="card-image">
-            <img :src="talkImage(talk.slug)" class="img-responsive" :alt="`Sample slide ${talk.title}`" width="900" height="500">
-          </div>
-          <div class="card-body">
-            <nuxt-content :document="talk" />
-          </div>
-          <div class="card-footer">
-            <div class="card-subtitle">
-              {{ formatDate(talk.date) }}
-            </div>
-          </div>
-        </div>
+        </floopy-button>
       </n-link>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.talk-link {
+  &, &:active, &:focus {
+    box-shadow: none!important;
+  }
+}
+
+.floopy {
+  --angle: 5;
+  --click-angle: 15;
+  --glow-color: rgba(255, 255, 255, 0.5);
+  --glow-background: rgba(255, 255, 255, 0.0);
+  height: 100%;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -77,8 +95,13 @@
 
 .card {
   border: 0;
-  box-shadow: 0 0.25rem 1rem rgba(48,55,66,.15);
   height: 100%;
+  box-shadow: 0 0.25rem 1rem rgba(48,55,66,.15);
+  transition: box-shadow 150ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0.2rem 0.5rem rgba(48,55,66,.3);
+  }
 }
 
 .column {

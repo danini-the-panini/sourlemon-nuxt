@@ -1,12 +1,13 @@
 <template>
   <div
     ref="el"
-    class="floopy-button"
+    :class="{ 'floopy-button': true, 'floopy-button--clickable': !notClickable }"
     @mouseenter="mouseenter"
     @mouseleave="mouseleave"
     @mousemove="mousemove"
     @mousedown="mousedown"
     @mouseup="mouseup"
+    @click="$emit('click')"
   >
     <div ref="content" class="floopy-button__content" :style="style">
       <div class="floopy-button__glow" :style="glowStyle"></div>
@@ -24,7 +25,10 @@
   padding: 0;
   margin: 0;
   outline: none;
-  cursor: pointer;
+
+  &--clickable {
+    cursor: pointer;
+  }
   
   &__content {
     display: block;
@@ -34,7 +38,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    pointer-events: none;
   }
     
   &__glow {
@@ -47,6 +50,8 @@
     height: 100%;
     opacity: 0;
     transition: opacity 200ms ease;
+    pointer-events: none;
+    mix-blend-mode: lighten;
   }
 }
 </style>
@@ -61,6 +66,9 @@ function vecLength(v) {
 }
 
 export default {
+  props: {
+    notClickable: Boolean
+  },
   data() {
     return {
       isDown: false,
@@ -106,26 +114,29 @@ export default {
     this.isMounted = true;
   },
   methods: {
+    updateMouse(e) {
+      this.x = e.pageX - this.$refs.el.offsetLeft;
+      this.y = e.pageY - this.$refs.el.offsetTop;
+    },
     getProperty(name) {
       return getComputedStyle(this.$refs.el).getPropertyValue(name);
     },
     mouseenter(e) {
       this.flooping = true;
-      this.x = e.offsetX;
-      this.y = e.offsetY;
+      this.updateMouse(e);
     },
     mouseleave() {
       this.flooping = false;
-      // $(this).find('.glow').css('opacity', 0);
     },
     mousemove(e) {
-      this.x = e.offsetX;
-      this.y = e.offsetY;
+      this.updateMouse(e);
     },
     mousedown() {
+      if (this.notClickable) return;
       this.isDown = true;
     },
     mouseup() {
+      if (this.notClickable) return;
       this.isDown = false;
     },
   }
