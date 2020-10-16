@@ -60,26 +60,6 @@ function vecLength(v) {
   return Math.sqrt(v.x*v.x + v.y*v.y);
 }
 
-function floop(el, e) {
-  const offset = {
-    x: calcOffset(e.offsetX, el.outerWidth()),
-    y: calcOffset(e.offsetY, el.outerHeight())
-  }
-  
-  const isDown = el[0].isDown || false;
-  
-  const angle = vecLength(offset) * (isDown ? 25 : 10);
-  
-  appendTransform(el[0], 'rotate3d', `${offset.y}, ${-offset.x}, 0.0, ${angle}deg`);
-  
-  const xp = (50 - offset.x * 100).toString() + '%';
-  const yp = (50 - offset.y * 100).toString() + '%';
-  const glow = el.find('.glow');
-  
-  glow.css('background', `radial-gradient(circle at ${xp} ${yp}, ${glowColor}, ${glowBg})`);
-  glow.css('opacity', 1);
-}
-
 export default {
   data() {
     return {
@@ -100,7 +80,10 @@ export default {
     style() {
       if (!process.browser || !this.isMounted || !this.flooping) return {};
 
-      const angle = vecLength(this.offset) * (this.isDown ? 30 : 20);
+      let angleUp = this.getProperty('--angle') || 25;
+      let angleDown = this.getProperty('--click-angle') || 10;
+
+      const angle = vecLength(this.offset) * (this.isDown ? angleDown : angleUp);
       return {
         transform: `translateZ(${this.isDown ? '-2rem' : '-0.5rem'}) rotate3d(${this.offset.y}, ${-this.offset.x}, 0.0, ${angle}deg)`
       };
@@ -110,8 +93,8 @@ export default {
 
       const xp = (50 - this.offset.x * 100).toString() + '%';
       const yp = (50 - this.offset.y * 100).toString() + '%';
-      const glowColor = getComputedStyle(this.$refs.el).getPropertyValue('--glow-color');
-      const glowBg = getComputedStyle(this.$refs.el).getPropertyValue('--glow-background');
+      const glowColor = this.getProperty('--glow-color');
+      const glowBg = this.getProperty('--glow-background');
 
       return {
         opacity: this.flooping ? 1 : 0,
@@ -123,6 +106,9 @@ export default {
     this.isMounted = true;
   },
   methods: {
+    getProperty(name) {
+      return getComputedStyle(this.$refs.el).getPropertyValue(name);
+    },
     mouseenter(e) {
       this.flooping = true;
       this.x = e.offsetX;

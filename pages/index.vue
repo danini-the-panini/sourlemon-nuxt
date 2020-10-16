@@ -89,8 +89,16 @@
 
   .button {
     width: 100%;
+    --angle: 20;
+    --click-angle: 30;
     --glow-color: rgba(255, 255, 255, 0.5);
     --glow-background: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      .btn {
+        box-shadow: 0 0.3rem 0.3rem rgba(48,55,66,.3);
+      }
+    }
 
     .btn {
       width: 100%;
@@ -98,6 +106,7 @@
       display: flex;
       align-items: center;
       box-shadow: 0 0.5rem 0.5rem rgba(48,55,66,.3);
+      transition: box-shadow 150ms ease-in-out;
 
       .link-icon {
         margin-right: 0.5rem;
