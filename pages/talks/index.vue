@@ -3,9 +3,10 @@
   import formatDate from '../../functions/formatDate';
   import talkPath from '../../functions/talkPath';
   import FloopyButton from '../../components/FloopyButton.vue';
+  import GithubButton from '../../static/github.svg';
 
   export default {
-    components: { FloopyButton },
+    components: { FloopyButton, GithubButton },
     head() {
       return {
         title: generateTitle("Talks")
@@ -40,7 +41,10 @@
           <div class="card text-dark">
             <div class="card-header">
               <div class="card-title">
-                <h2 class="h5">{{ talk.title }}</h2>
+                <h2 class="h5">
+                  {{ talk.title }}
+                  <GithubButton v-if="talk.repo" />
+                </h2>
               </div>
               <div class="card-subtitle" v-html="talk.subtitle">
               </div>
@@ -117,7 +121,16 @@
   display: flex;
 
   h2 {
-    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    margin-left: auto;
+    fill: #999;
   }
 }
 
