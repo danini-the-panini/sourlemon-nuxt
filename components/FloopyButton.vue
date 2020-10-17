@@ -115,6 +115,7 @@ export default {
   },
   methods: {
     updateMouse(e) {
+      if (!this.$refs.el) return;
       this.x = e.pageX - this.$refs.el.offsetLeft;
       this.y = e.pageY - this.$refs.el.offsetTop;
     },
