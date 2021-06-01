@@ -4,9 +4,11 @@
   import talkPath from '../../functions/talkPath';
   import FloopyButton from '../../components/FloopyButton.vue';
   import GithubButton from '../../static/github.svg';
+  import YoutubeButton from '../../static/youtube.svg';
+  import SlidesButton from '../../static/slides.svg';
 
   export default {
-    components: { FloopyButton, GithubButton },
+    components: { FloopyButton, GithubButton, YoutubeButton, SlidesButton },
     head() {
       return {
         title: generateTitle("Talks")
@@ -42,8 +44,10 @@
             <div class="card-header">
               <div class="card-title">
                 <h2 class="h5">
-                  {{ talk.title }}
+                  <span>{{ talk.title }}</span>
                   <GithubButton v-if="talk.repo" />
+                  <YoutubeButton v-if="talk.video" />
+                  <SlidesButton v-if="talk.slides" />
                 </h2>
               </div>
               <div class="card-subtitle" v-html="talk.subtitle">
@@ -124,12 +128,16 @@
     display: flex;
     align-items: center;
     width: 100%;
+
+    span {
+      margin-right: auto;
+    }
   }
 
   svg {
     width: 1rem;
     height: 1rem;
-    margin-left: auto;
+    margin-left: 0.25rem;
     fill: #999;
   }
 }
