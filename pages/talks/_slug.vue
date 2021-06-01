@@ -1,6 +1,6 @@
 <script>
   import YoutubeEmbed from '../../components/YoutubeEmbed.vue';
-  import SpeakerDeck from '../../components/SpeakerDeck.vue';
+  import SpeakerDeck from '../../components/GoogleSlides.vue';
   import formatDate from '../../functions/formatDate';
   import generateTitle from '../../functions/generateTitle';
   import FloopyButton from '../../components/FloopyButton.vue';
@@ -46,13 +46,13 @@
         </floopy-button>
       </section>
       <nuxt-content :document="talk" />
+      <section v-if="talk.slides">
+        <h2>Slides</h2>
+        <google-slides :slides="talk.slides" class="talk__deck" :ratio="talk.deckRatio" />
+      </section>
       <section v-if="talk.video">
         <h2>Video</h2>
         <youtube-embed :video="talk.video" class="talk__video" />
-      </section>
-      <section v-if="talk.deck">
-        <h2>Slides</h2>
-        <speaker-deck :deck="talk.deck" class="talk__deck" :ratio="talk.deckRatio" />
       </section>
     </div>
   </article>

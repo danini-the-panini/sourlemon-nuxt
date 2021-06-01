@@ -1,20 +1,25 @@
 <template>
-  <iframe 
+  <iframe
     ref="iframe"
     :src="embedSrc"
-    width="840"
-    height="472"
-    frameborder="0"></iframe>
+    frameborder="0"
+    width="960"
+    height="569"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+  >
+  </iframe>
 </template>
 
 <script>
 export default {
   props: {
-    deck: String,
+    slides: String,
     ratio: Number
   },
   computed: {
-    embedSrc() { return `https://speakerdeck.com/player/${this.deck}`; }
+    embedSrc() { return `https://docs.google.com/presentation/d/e/${this.slides}/embed?start=false&loop=false&delayms=3000`; }
   },
   created() {
     this.onResize = this.onResize.bind(this);
@@ -29,9 +34,7 @@ export default {
   methods: {
     onResize() {
       let ratio = (this.ratio || 1.77777777777778);
-      console.log(ratio);
-      console.log(this.$refs.iframe.clientWidth/ratio)
-      this.$refs.iframe.style.height = `${this.$refs.iframe.clientWidth/ratio}px`;
+      this.$refs.iframe.style.height = `${this.$refs.iframe.clientWidth/ratio + 36}px`;
     }
   }
 }
