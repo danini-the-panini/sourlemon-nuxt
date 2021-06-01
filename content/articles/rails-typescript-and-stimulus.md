@@ -96,4 +96,4 @@ If things are really bad and after restarting everything (including your compute
 
 I've found that these slightly annoying situations only really occur while setting things up the first time. Once everything is set up properly you can happily TypeScript without any issues.
 
-You can find an example app with commits for every step in this repo on GitHub: [jellymann/typescript_stimulus](https://github.com/jellymann/typescript_stimulus).
+You can find an example app with commits for every step in this repo on GitHub: [danini-the-panini/typescript_stimulus](https://github.com/danini-the-panini/typescript_stimulus).

@@ -76,9 +76,9 @@ export default {
         </n-link>
       </section>
       <section class="navbar-section">
-        <a href="https://twitch.tv/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitchLogo /><span class="hide-sm">Twitch</span></a>
-        <a href="https://twitter.com/jellym4nn" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitterLogo /><span class="hide-sm">Twitter</span></a>
-        <a href="https://github.com/jellymann" target="_blank" rel="noreferrer noopener" class="btn btn-link"><GithubLogo /><span class="hide-sm">Github</span></a>
+        <a href="https://twitch.tv/daniniThePan1ni" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitchLogo /><span class="hide-sm">Twitch</span></a>
+        <a href="https://twitter.com/daniniThePan1ni" target="_blank" rel="noreferrer noopener" class="btn btn-link"><TwitterLogo /><span class="hide-sm">Twitter</span></a>
+        <a href="https://github.com/danini-the-panini" target="_blank" rel="noreferrer noopener" class="btn btn-link"><GithubLogo /><span class="hide-sm">Github</span></a>
       </section>
     </header>
     <main class="container grid-md">

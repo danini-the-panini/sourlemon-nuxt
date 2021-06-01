@@ -10,7 +10,7 @@
     </div>
 
     <div class="about">
-      <p>Hi, I'm Dan. Nice to meet you.</p>
+      <p>Hi, I'm Dani. Nice to meet you.</p>
 
       <p>I love my job. I'm a full-time full-stack web developer at <a href="http://www.platform45.com/" target="_blank" rel="noreferrer noopener">Platform45</a>.</p>
 

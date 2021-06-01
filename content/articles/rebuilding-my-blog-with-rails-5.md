@@ -125,4 +125,4 @@ And remember, kids:
 >
 > Ergo lorem ipsum ... you won't know unless you try.
 
-_**Update 24 September 2020:**_ I've since re-built my blog/website using [Nuxt.js](https://nuxtjs.org/). The original Rails version is still availalbe [here](https://github.com/jellymann/sourlemon).
+_**Update 24 September 2020:**_ I've since re-built my blog/website using [Nuxt.js](https://nuxtjs.org/). The original Rails version is still availalbe [here](https://github.com/danini-the-panini/sourlemon).

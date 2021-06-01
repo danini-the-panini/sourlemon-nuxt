@@ -5,13 +5,13 @@ tags: ["gamedev", "websockets", "node", "javascript"]
 ---
 # I Made and Played a Game at a LAN
 
-Achievement unlocked! Check out my quick-and-dirty WebSocket/WebGL game [here](https://github.com/jellymann/websocket-game).
+Achievement unlocked! Check out my quick-and-dirty WebSocket/WebGL game [here](https://github.com/danini-the-panini/websocket-game).
 
 ## The Achievement(s)
 
 This weekend, I achieved a number of goals I have had for myself as a developer.
 
-First and foremost, I wrote a real-time network-enabled multiplayer game. This is something I've always wanted to do. Earlier multiplayer games I wrote were keyboard-sharing and/or hotseat games. My first network-enabled game was a turn-based TCP battleships game I wrote for a second year university project. Later, I made an attempt at a real-time networked game (using TCP and then UDP), which was an [abysmal failure](https://github.com/jellymann/NetGame). This weekend I decided to use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) and it turned out great.
+First and foremost, I wrote a real-time network-enabled multiplayer game. This is something I've always wanted to do. Earlier multiplayer games I wrote were keyboard-sharing and/or hotseat games. My first network-enabled game was a turn-based TCP battleships game I wrote for a second year university project. Later, I made an attempt at a real-time networked game (using TCP and then UDP), which was an [abysmal failure](https://github.com/danini-the-panini/NetGame). This weekend I decided to use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) and it turned out great.
 
 Second of all, I built an actual playable game with [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) and [THREE.js](threejs.org). I've played around a lot with THREE.js in the past, but I had never actually built a playable game before. Most other Graphics Programming I do is the hard-core way, with C or Java. OpenGL is hard, but THREE.js makes it easy and and accessible.
 

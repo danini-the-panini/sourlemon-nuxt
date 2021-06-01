@@ -60,7 +60,7 @@ Another thing to remember when stubbing out the entire file system is that you a
 
 ## 3. Injecting StringIO
 
-Dependency injection is a boon to tests. With that said, why not inject the "file system" into your method? Doing this is easier than you think, and I've used this in the past when testing my [tag_remover](https://github.com/jellymann/tag_remover) gem. Basically, all you have to do is write your method to take IO streams instead of file paths. Then in production, you can give it a File object, and in your test you can "stub" out the file with an instance of `StringIO`, which acts almost exactly the same as a file stream. Here's how you might implement the method to support dependency injection:
+Dependency injection is a boon to tests. With that said, why not inject the "file system" into your method? Doing this is easier than you think, and I've used this in the past when testing my [tag_remover](https://github.com/danini-the-panini/tag_remover) gem. Basically, all you have to do is write your method to take IO streams instead of file paths. Then in production, you can give it a File object, and in your test you can "stub" out the file with an instance of `StringIO`, which acts almost exactly the same as a file stream. Here's how you might implement the method to support dependency injection:
 
 ``` ruby
 def write_to_some_file(file, data)
@@ -88,7 +88,7 @@ Of course, this only works in certain cases. Specifically when you're dealing wi
 
 ## 4. Just Don't
 
-Now just think to yourself, _just why are you stubbing out the file system in the first place?_ There isn't anything particularly _wrong_ with the file system, and every test environment will most certainly have one. With this in mind I don't see any reason not to just do your business in an actual directory and clean up afterwards. This is the approach I use in [rpluplus](https://github.com/jellymann/rplusplus) and in one of my work projects.
+Now just think to yourself, _just why are you stubbing out the file system in the first place?_ There isn't anything particularly _wrong_ with the file system, and every test environment will most certainly have one. With this in mind I don't see any reason not to just do your business in an actual directory and clean up afterwards. This is the approach I use in [rpluplus](https://github.com/danini-the-panini/rplusplus) and in one of my work projects.
 
 Basically, all you have to do is something like this in your test suite:
 

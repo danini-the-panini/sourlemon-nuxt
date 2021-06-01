@@ -6,7 +6,7 @@ tags: ["meta"]
 # Literate Programming
 
 ## tl;dr
-Check out my literate programming implementation called [WEBdown](https://github.com/jellymann/WEBdown).
+Check out my literate programming implementation called [WEBdown](https://github.com/danini-the-panini/WEBdown).
 
 ## Rant
 
@@ -16,4 +16,4 @@ In my three years of studying computer science, I think Donald Knuth was mention
 
 Most people these days who have heard of Literate Programming (LP) tend to believe that technologies like doxygen and javadocs are the 'modern day' incarnation of LP. These people are horribly misinformed. There is a huge, key difference between comment-based documentation and LP. In a typical literate program, the code is not necessarily in the order that it would be if it were in a standalone source file. Instead, the source code is presented in a "natural" order, or, as Knuth puts it, a "stream of conciousness." As a book, your program's code is defined in the order you describe it. The advantages are incredible. This allows you to focus on the important or fundamental pieces of your project first, and then put boring stuff like boilerplate code or pre-processed look-up-tables in the apendices. Each of your code snippets have a name and are placed in the index. Referenced snippets are easy to find since they include the number of the chapter or section in which they were defined. Electronic representations of LP can also use hyperlinks to make navigation of the code incredibly easy. You could even write a blog post that is actually a literate program. The possibilities are endless. [This guy](http://youtu.be/Av0PQDVTP4A) gets some solid points across regarding LP and advocates its use in industry.
 
-So after ranting about LP, I present to you a small project I worked on this afternoon: a small, 'modern' implementation of LP based on Markdown. I call it [WEBdown](https://github.com/jellymann/WEBdown).
+So after ranting about LP, I present to you a small project I worked on this afternoon: a small, 'modern' implementation of LP based on Markdown. I call it [WEBdown](https://github.com/danini-the-panini/WEBdown).

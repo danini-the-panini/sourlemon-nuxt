@@ -11,7 +11,7 @@ Three and a half hours after getting familiar with [Gosu](http://libgosu.org/) I
 
 It's flappy-bird-esque: space to jump, don't touch the stars or the edges.
 
-Get it: [Download](https://github.com/jellymann/furry-dangerzone/releases) | [Github](http://github.com/jellymann/furry-dangerzone)
+Get it: [Download](https://github.com/danini-the-panini/furry-dangerzone/releases) | [Github](http://github.com/danini-the-panini/furry-dangerzone)
 
 Screenshots:
 
