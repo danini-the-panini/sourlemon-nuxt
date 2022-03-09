@@ -12,7 +12,9 @@
     <div class="about">
       <p>Hi, I'm Dani. Nice to meet you.</p>
 
-      <p>I love my job. I'm a full-time full-stack web developer at <a href="http://www.platform45.com/" target="_blank" rel="noreferrer noopener">Platform45</a>.</p>
+      <p>I'm a queer trans woman from South Africa. I love programming, gaming, and sleeping.</p>
+
+      <p>I currently work as a senior Ruby on Rails developer for <a href="https://nebulab.com/">Nebulab</a>.</p>
 
       <p>This website is a collection of technology-related things I have decided to share with the world. Enjoy :)</p>
     </div>
